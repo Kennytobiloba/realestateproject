@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center style="width: 400px; padding: 70px ; margin: 300px 300px 300px 500px; background-color: whitesmoke; color:  black; box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.5);">
+        <h1 style="text-transform: uppercase;">our Review</h1>
+        <h2 id="authors">taiwo tobiloba</h2>
+        <h3 id="job">accountant</h3>
+        <h4 id="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quis debitis non neque aliquam, magni consectetur et quod veniam dolorum?</h4>
+        
+        <button class="forward" style="background-color: rgb(242, 16, 53); color: black; padding: 10px ;font-weight: 600;">forward</button> <button class="back" style="background-color: green; color: black; padding: 10px; font-weight: 600;">backward</button> <br> <br>
+        <button class="random" style="background-color: brown; color: white; padding: 10px ; font-weight: 600;">random</button>
+    </center>
+    
+    <script>
+        const authors = document.querySelector("#authors");
+        const job = document.querySelector("#job");
+        const info = document.querySelector("#info");
+        const forward = document.querySelector(".forward");
+        const backward = document.querySelector(".back");
+        const random = document.querySelector(".random");
+        document.body.style.backgroundColor = "blue"
+        const review = [
+            {
+                id : 1,
+                name : "kenny",
+                job : "mobile app",
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, eum voluptatibus. Ut quibusdam distinctio dolorum doloremque libero ea dignissimos deleniti."
+                
+            },
+
+            {
+                id : 1,
+                name : "nifemi",
+                job : "frontend",
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, eum voluptatibus. Ut quibusdam distinctio dolorum doloremque libero ea dignissimos deleniti."
+                
+            },
+            {
+                id : 1,
+                name : "emmy",
+                job : "web",
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, eum voluptatibus. Ut quibusdam distinctio dolorum doloremque libero ea dignissimos deleniti."
+                
+            },
+            {
+                id : 1,
+                name : "ayomide",
+                job : "mobileapp",
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, eum voluptatibus. Ut quibusdam distinctio dolorum doloremque libero ea dignissimos deleniti."
+                
+            },
+            {
+                id : 1,
+                name : "Hannah",
+                job : "mobileapp",
+                text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, eum voluptatibus. Ut quibusdam distinctio dolorum doloremque libero ea dignissimos deleniti."
+                
+            }
+        ]
+        let currentItem = 0;
+        window.addEventListener("DOMContentLoaded",function(){
+           showPerson() 
+        })
+        function showPerson(){
+            const item = review[currentItem];
+            authors.textContent = item.name,
+            job.textContent = item.job;
+            info.textContent = item.text;
+
+        }
+        forward.addEventListener('click', function(){
+            if (currentItem > review.length - 1) {
+               currentItem = 0; 
+            }
+            currentItem++
+            showPerson()
+
+        })
+        backward.addEventListener('click', function(){
+            currentItem--
+            
+           if (currentItem < 0) {
+            currentItem =review.length -1;
+            
+           }
+           showPerson()
+
+            
+
+        })
+        random.addEventListener("click",function(){
+            currentItem = Math.floor(Math.random()* review.length);
+            console.log(currentItem);
+            showPerson()
+            
+        })
+        // backward.addEventListener('click', function(){
+        //     currentItem--
+        //     showPerson(currentItem)
+
+        // })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= a, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <h2>LOGO</h2>
+        <ul class="link">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Proflio</a></li>
+            <li><a href="">Adress</a></li>
+        </ul>
+       <div class="bar">
+        <i class="fa-solid fa-bars bar"></i>
+       </div>
+        <div class="close">
+            <i class="fa-solid fa-xmark close"></i>
+        </div>
+    </nav>
+    <script>
+        const link = document.querySelector(".link"); 
+        const bar = document.querySelector(".bar"); 
+        const close = document.querySelector(".close"); 
+
+        bar.addEventListener("click", function(){
+            link.style.display = "flex"
+            bar.style.display ="none"
+            close.style.display = "inline-block"
+
+        })
+        close.addEventListener("click", function(){
+            link.style.display = "none"
+            bar.style.display ="inline-block"
+            close.style.display = "none"
+
+        })
+    </script>
+</body>
+</html>
